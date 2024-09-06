@@ -465,20 +465,7 @@ import { storeToRefs } from 'pinia'
 const global = useGlobal()
 
 const { getMode } = storeToRefs(global)
-const { setMode } = global
-
-const changeMode = (mode: string) => {
-    const html = document.body
-    if (mode === 'dark') {
-        localStorage.theme = 'dark'
-        setMode('dark')
-        html.classList.add('dark')
-    } else {
-        localStorage.theme = 'light'
-        setMode('light')
-        html.classList.remove('dark')
-    }
-}
+const { setMode, changeMode } = global
 </script>
 
 <style lang="scss" scoped>

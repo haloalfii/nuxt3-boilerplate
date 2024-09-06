@@ -13,9 +13,22 @@ export const useGlobal = () => {
     } = storeToRefs(globalStore)
 
     const processMode = () => {
-        const html = document.body
+        const html = document.documentElement
         const mode = localStorage.getItem('theme')
 
+        if (mode === 'dark') {
+            localStorage.theme = 'dark'
+            setMode('dark')
+            html.classList.add('dark')
+        } else {
+            localStorage.theme = 'light'
+            setMode('light')
+            html.classList.remove('dark')
+        }
+    }
+
+    const changeMode = (mode: string) => {
+        const html = document.documentElement
         if (mode === 'dark') {
             localStorage.theme = 'dark'
             setMode('dark')
@@ -30,6 +43,7 @@ export const useGlobal = () => {
     return {
         setMode,
         getMode,
-        processMode
+        processMode,
+        changeMode
     }
 }
