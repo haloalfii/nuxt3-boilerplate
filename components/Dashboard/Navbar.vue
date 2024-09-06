@@ -20,11 +20,11 @@
                     </svg>
                     <span class="sr-only">Toggle sidebar</span>
                 </button>
-                <a href="https://flowbite.com" class="flex items-center justify-between mr-4">
+                <NuxtLink to="/" class="flex items-center justify-between mr-4">
                     <img src="https://flowbite.s3.amazonaws.com/logo.svg" class="mr-3 h-8" alt="Flowbite Logo" />
                     <span
                         class="self-center hidden md:block text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-                </a>
+                </NuxtLink>
                 <form action="#" method="GET" class="hidden md:block md:pl-2">
                     <label for="topbar-search" class="sr-only">Search</label>
                     <div class="relative md:w-64 xl:w-96">
