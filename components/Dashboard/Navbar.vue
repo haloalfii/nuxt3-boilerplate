@@ -53,6 +53,15 @@
                         </path>
                     </svg>
                 </button>
+                <!-- Dark Mode -->
+                <button type="button"
+                    @click="changeMode(getMode === 'light' ? 'dark' : 'light')"
+                    class="h-[40px] p-2 mr-1 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600">
+                    <span class="sr-only">Change Mode</span>
+                    <!-- Bell icon -->
+                    <Icon v-if="getMode === 'light'" class="text-2xl" name="material-symbols:dark-mode" />
+                    <Icon v-if="getMode === 'dark'" class="text-2xl" name="material-symbols:light-mode" />
+                </button>
                 <!-- Notifications -->
                 <button type="button" data-dropdown-toggle="notification-dropdown"
                     class="p-2 mr-1 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600">
@@ -451,8 +460,25 @@
     </nav>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { storeToRefs } from 'pinia'
+const global = useGlobal()
 
+const { getMode } = storeToRefs(global)
+const { setMode } = global
+
+const changeMode = (mode: string) => {
+    const html = document.body
+    if (mode === 'dark') {
+        localStorage.theme = 'dark'
+        setMode('dark')
+        html.classList.add('dark')
+    } else {
+        localStorage.theme = 'light'
+        setMode('light')
+        html.classList.remove('dark')
+    }
+}
 </script>
 
 <style lang="scss" scoped>

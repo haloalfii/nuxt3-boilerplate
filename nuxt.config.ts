@@ -8,7 +8,13 @@ export default defineNuxtConfig({
     {
       autoImports: ['defineStore', 'acceptHMRUpdate']
     }
-  ], '@nuxt/icon'],
+  ], '@nuxt/icon', '@nuxtjs/color-mode'],
+
+  colorMode: {
+    classSuffix: '',
+    preference: 'light',
+    fallback: 'light'
+  },
 
   tailwindcss: {
     cssPath: '~/assets/css/input.css'
