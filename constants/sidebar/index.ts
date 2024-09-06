@@ -16,15 +16,15 @@ export const menus = [
             isBeta: false,
             child: [
                 {
-                    title: "Pages 1",
-                    path: "/pages/1",
-                    key: "pages-1",
+                    title: "Login",
+                    path: "/login",
+                    key: "login",
                     isBeta: false,
                 },
                 {
-                    title: "Pages 2",
-                    path: "/pages/2",
-                    key: "pages-2",
+                    title: "Register",
+                    path: "/register",
+                    key: "register",
                     isBeta: false,
                 }
             ]
@@ -38,13 +38,13 @@ export const menus = [
             child: [
                 {
                     title: "stat 1",
-                    path: "/stat/1",
+                    path: "/",
                     key: "stat-1",
                     isBeta: false,
                 },
                 {
                     title: "stat 2",
-                    path: "/stat/2",
+                    path: "/",
                     key: "stat-2",
                     isBeta: false,
                 }
@@ -55,7 +55,7 @@ export const menus = [
         {
             title: "Documents",
             icon: "i-heroicons-light-bulb",
-            path: "/docs",
+            path: "/",
             key: "docs",
             isBeta: true,
             child: []

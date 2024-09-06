@@ -25,13 +25,13 @@
                 :class="{'pt-5 mt-5 border-t border-gray-200 dark:border-gray-700' : index > 0}">
                 <li v-for="(littleMenu, indexLittle) of menus" :key="'index-littleMenu-' + indexLittle">
                     <!-- Normal Menu -->
-                    <RouterLink :to="littleMenu.path" v-if="littleMenu.child.length == 0"
+                    <NuxtLink :to="littleMenu.path" v-if="littleMenu.child.length == 0"
                         class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 
                         <!-- Icons -->
                         <Icon :name="littleMenu.icon" />
                         <span class="ml-3">{{ littleMenu.title }}</span>
-                    </RouterLink>
+                    </NuxtLink>
 
                     <!-- Collapsed Menu -->
                     <template v-else>
@@ -52,10 +52,10 @@
                         </button>
                         <ul :id="`dropdown-${littleMenu.key}`" class="hidden py-2 space-y-2">
                             <li v-for="(childMenu, indexChild) of littleMenu.child">
-                                <RouterLink :to="childMenu.path"
+                                <NuxtLink :to="childMenu.path"
                                     class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                                     {{ childMenu.title }}
-                                </RouterLink>
+                                </NuxtLink>
                             </li>
                         </ul>
                     </template>

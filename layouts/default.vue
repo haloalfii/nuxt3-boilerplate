@@ -11,6 +11,7 @@
 
 <script setup>
 import { storeToRefs } from 'pinia'
+import { useFlowbite } from '~/composables/useFlowbite';
 const global = useGlobal()
 
 const { getMode } = storeToRefs(global)
@@ -29,6 +30,10 @@ onMounted(async() => {
         setMode('light')
         html.classList.remove('dark')
     }
+
+    useFlowbite(() => {
+        initFlowbite();
+    })
 })
 </script>
 
