@@ -10,7 +10,7 @@ export const menus = [
         },
         {
             title: "Pages",
-            icon: "ic:baseline-dashboard",
+            icon: "material-symbols:find-in-page-sharp",
             path: "",
             key: "pages",
             isBeta: false,
@@ -31,7 +31,7 @@ export const menus = [
         },
         {
             title: "Statistic",
-            icon: "ic:baseline-dashboard",
+            icon: "material-symbols:stacked-line-chart",
             path: "",
             key: "stat",
             isBeta: false,

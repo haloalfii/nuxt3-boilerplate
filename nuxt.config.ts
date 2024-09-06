@@ -3,15 +3,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
 
-  modules: [
-    '@nuxtjs/tailwindcss', 
-    [
-      '@pinia/nuxt',
-      {
-        autoImports: ['defineStore', 'acceptHMRUpdate']
-      }
-    ]
-  ],
+  modules: ['@nuxtjs/tailwindcss', [
+    '@pinia/nuxt',
+    {
+      autoImports: ['defineStore', 'acceptHMRUpdate']
+    }
+  ], '@nuxt/icon'],
 
   tailwindcss: {
     cssPath: '~/assets/css/input.css'
