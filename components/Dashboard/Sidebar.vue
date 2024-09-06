@@ -26,11 +26,15 @@
                 <li v-for="(littleMenu, indexLittle) of menus" :key="'index-littleMenu-' + indexLittle">
                     <!-- Normal Menu -->
                     <NuxtLink :to="littleMenu.path" v-if="littleMenu.child.length == 0"
-                        class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        class="flex items-center justify-between p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 
                         <!-- Icons -->
-                        <Icon :name="littleMenu.icon" />
-                        <span class="ml-3">{{ littleMenu.title }}</span>
+                        <div>
+                            <Icon :name="littleMenu.icon" />
+                            <span class="ml-3">{{ littleMenu.title }}</span>
+                        </div>
+                        <span v-if="littleMenu.isBeta"
+                            class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-white bg-red-700 rounded-full dark:bg-red-500 dark:text-gray-300">Beta</span>
                     </NuxtLink>
 
                     <!-- Collapsed Menu -->
@@ -43,6 +47,9 @@
                             <!-- Icons -->
                             <Icon :name="littleMenu.icon" />
                             <span class="flex-1 ml-3 text-left whitespace-nowrap">{{ littleMenu.title }}</span>
+
+                            <span v-if="littleMenu.isBeta"
+                                class="inline-flex items-center justify-center px-2 ms-3 me-3 text-sm font-medium text-white bg-red-700 rounded-full dark:bg-red-500 dark:text-gray-300">Beta</span>
                             <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"

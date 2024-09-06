@@ -34,7 +34,7 @@ export const menus = [
             icon: "material-symbols:stacked-line-chart",
             path: "",
             key: "stat",
-            isBeta: false,
+            isBeta: true,
             child: [
                 {
                     title: "stat 1",
