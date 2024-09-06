@@ -47,9 +47,9 @@
             </div>
             <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
             <div class="sm:flex sm:items-center sm:justify-between">
-                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a
+                <p class="text-sm text-gray-500 sm:text-center dark:text-gray-400 h-[40px] mb-0 flex items-center">© 2022 <a
                         href="https://flowbite.com" class="hover:underline">Flowbite™</a>. All Rights Reserved.
-                </span>
+                </p>
                 <button type="button" @click="changeMode(getMode === 'light' ? 'dark' : 'light')"
                     class="h-[40px] p-2 mr-1 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600">
                     <span class="sr-only">Change Mode</span>
